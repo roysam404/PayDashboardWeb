@@ -53,7 +53,7 @@ public class LoginPageTest extends BaseTest {
 		Assert.assertEquals(accPage.isLogoutLinkExist(), true);
 	}
 	
-	@Description("checking naveen test")
+	@Description("checking Experian test")
 	@Severity(SeverityLevel.MINOR)
 	@Test(priority = 6, enabled = false)
 	public void sanityTest() {
@@ -61,7 +61,7 @@ public class LoginPageTest extends BaseTest {
 	}
 	
 	
-	@Description("checking naveen test")
+	@Description("checking Experian test")
 	@Severity(SeverityLevel.MINOR)
 	@Test(priority = 5, enabled = false)
 	public void naveenTest() {

@@ -1,5 +1,6 @@
 package com.qa.opencart.base;
 
+import java.io.IOException;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
@@ -27,9 +28,9 @@ public class BaseTest {
 	
 	protected SoftAssert softAssert;
 	
-	@Parameters({"browser", "browserversion", "testname"})
+	@Parameters({"browser", "browserversion", "testname", "env" })
 	@BeforeTest
-	public void setup(String browserName, String browserVersion, String testName) {
+	public void setup(String browserName, String browserVersion, String testName, String env) throws IOException {
 		df = new DriverFactory();
 		prop = df.initProp();
 		
@@ -37,6 +38,7 @@ public class BaseTest {
 				prop.setProperty("browser", browserName);
 				prop.setProperty("browserversion", browserVersion);
 				prop.setProperty("testname", testName);
+				prop.setProperty("env", env);	
 			}
 		
 		

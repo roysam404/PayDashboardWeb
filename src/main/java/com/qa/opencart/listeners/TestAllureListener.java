@@ -75,6 +75,15 @@ public class TestAllureListener implements ITestListener {
 	@Override
 	public void onTestSkipped(ITestResult iTestResult) {
 		System.out.println("I am in onTestSkipped method " + getTestMethodName(iTestResult) + " skipped");
+		Object testClass = iTestResult.getInstance();
+		//WebDriver driver = BasePage.getDriver();
+		// Allure ScreenShotRobot and SaveTestLog
+		if (DriverFactory.getDriver() instanceof WebDriver) {
+			System.out.println("Screenshot captured for test case:" + getTestMethodName(iTestResult));
+			saveScreenshotPNG(DriverFactory.getDriver());
+		}
+		// Save a log on allure.
+		saveTextLog(getTestMethodName(iTestResult) + " failed and screenshot taken!");
 	}
 
 	@Override

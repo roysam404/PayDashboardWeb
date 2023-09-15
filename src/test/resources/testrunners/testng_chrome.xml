@@ -11,42 +11,53 @@
 			class-name="com.qa.opencart.listeners.TestAllureListener" />
 		<listener
 			class-name="com.qa.opencart.listeners.AnnotationTransformer" />
-			
-			<listener
-			class-name="com.qa.opencart.listeners.ItextPdfListener" />	
-			
+
+		<listener
+			class-name="com.qa.opencart.listeners.ItextPdfListener" />
+
 	</listeners>
 
-	<test name="Login Page Test">
+	<!-- <test name="Login Page Test">
 		<parameter name="browser" value="chrome" />
-	
+		<parameter name="browserversion" value="103.0.5060.53" />
+		<parameter name="testname" value="Login Test" />
+		<parameter name="env" value="qa" />
+
 		<classes>
 			<class name="com.qa.opencart.tests.LoginPageTest" />
 		</classes>
 	</test>
 
 	<test name="Accounts Page Test">
-			<parameter name="browser" value="chrome" />
-	
+		<parameter name="browser" value="chrome" />
+		<parameter name="browserversion" value="103.0.5060.53" />
+		<parameter name="testname" value="Account Test" />
+		<parameter name="env" value="qa" />
 		<classes>
 			<class name="com.qa.opencart.tests.AccountsPageTest" />
 		</classes>
 	</test>
 
-	<test name="ProductInfo Page Test">
-			<parameter name="browser" value="chrome" />
-	
+	 <test name="ProductInfo Page Test">
+		<parameter name="browser" value="chrome" />
+		<parameter name="browserversion" value="103.0.5060.53" />
+		<parameter name="testname" value="ProductInfo Test" />
+		<parameter name="env" value="qa" />
 		<classes>
 			<class name="com.qa.opencart.tests.ProductInfoTest" />
 		</classes>
+	</test> -->
+
+
+	<test name="Register Page Test">
+		<parameter name="browser" value="chrome" />
+		<parameter name="browserversion" value="103.0.5060.53" />
+		<parameter name="testname" value="ProductInfo Test" />
+		<parameter name="env" value="qa" />
+		<classes>
+			<class name="com.qa.opencart.tests.RegisterPageTest" />
+		</classes>
 	</test>
-
-
-	<!-- <test name="Register Page Test">
-	<classes>
-		<class name="com.qa.opencart.tests.RegisterPageTest" />
-	</classes>
-</test> -->
 
 
 

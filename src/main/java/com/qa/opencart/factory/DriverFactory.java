@@ -18,11 +18,7 @@ import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
-/**
- * 
- * @author naveenautomationlabs
- *
- */
+
 public class DriverFactory {
 	WebDriver driver;
 	Properties prop;
@@ -133,14 +129,19 @@ public class DriverFactory {
 	 * This method is used to init the properties
 	 * 
 	 * @return
+	 * @throws IOException 
 	 */
-	public Properties initProp() {
+	public Properties initProp() throws IOException {
 
 		// mvn clean install -Denv="qa"
 		FileInputStream ip = null;
+		FileInputStream globalip = null;
 		prop = new Properties();
-
-		String envName = System.getProperty("env");
+		
+		globalip = new FileInputStream("./src/test/resources/config/environmentName.properties");
+		prop.load(globalip);
+		//String envName = System.getProperty("env");
+		String envName = prop.getProperty("env");
 		System.out.println("env name is : " + envName);
 
 		try {

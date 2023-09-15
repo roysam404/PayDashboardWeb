@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Properties;
 
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -21,12 +22,12 @@ import com.qa.opencart.factory.DriverFactory;
 public class ExtentReportListener implements ITestListener {
 
 	private static final String OUTPUT_FOLDER = "./reports/";
-	private static final String FILE_NAME = "TestExecutionReport.html";
+	private static String FILE_NAME = "TestExecutionReport"+System.currentTimeMillis()+".html";
 
 	private static ExtentReports extent = init();
 	public static ThreadLocal<ExtentTest> test = new ThreadLocal<ExtentTest>();
 	private static ExtentReports extentReports;
-	
+	static Properties prop;
 
 	private static ExtentReports init() {
 
@@ -42,15 +43,16 @@ public class ExtentReportListener implements ITestListener {
 		}
 		
 		extentReports = new ExtentReports();
+		prop = new Properties();
 		ExtentSparkReporter reporter = new ExtentSparkReporter(OUTPUT_FOLDER + FILE_NAME);
-		reporter.config().setReportName("Open Cart Automation Test Results");
+		reporter.config().setReportName("Experian PayDashboard Report");
 		extentReports.attachReporter(reporter);
 		extentReports.setSystemInfo("System", "MAC");
-		extentReports.setSystemInfo("Author", "Naveen AutomationLabs");
+		extentReports.setSystemInfo("Author", "ExperianUser");
 		extentReports.setSystemInfo("Build#", "1.1");
-		extentReports.setSystemInfo("Team", "OpenCart QA Team");
+		extentReports.setSystemInfo("Team", "Experian PayDashboard");
 		extentReports.setSystemInfo("Customer Name", "NAL");
-		extentReports.setSystemInfo("ENV NAME", System.getProperty("env"));
+		extentReports.setSystemInfo("ENV NAME", prop.getProperty("env"));
 
 		return extentReports;
 	}
@@ -122,5 +124,6 @@ public class ExtentReportListener implements ITestListener {
 		calendar.setTimeInMillis(millis);
 		return calendar.getTime();
 	}
+	
 
 }

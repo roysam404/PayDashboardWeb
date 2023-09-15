@@ -10,7 +10,7 @@ import com.qa.opencart.constants.AppConstants;
 import com.qa.opencart.utils.ExcelUtil;
 
 public class RegisterPageTest extends BaseTest{
-	
+	Object data[][] = null;
 	
 	@BeforeClass
 	public void regSetup() {
@@ -23,7 +23,7 @@ public class RegisterPageTest extends BaseTest{
 	}
 	
 	
-	
+	/*
 	@DataProvider
 	public Object[][] getUserRegData() {
 		return new Object[][] {
@@ -33,18 +33,29 @@ public class RegisterPageTest extends BaseTest{
 		};
 	}
 	
-	@DataProvider
-	public Object[][] getUserRegSheetData() {
-		return ExcelUtil.getTestData(AppConstants.REGISTER_SHEET_NAME);
-	}	
+	
+	 * @DataProvider public Object[][] getUserRegSheetData() { return
+	 * ExcelUtil.getTestData(AppConstants.REGISTER_SHEET_NAME); }
+	 * 
+	 * 
+	 * @Test(dataProvider = "getUserRegSheetData") public void
+	 * userRegisterTest(String firstName, String lastName, String telephone, String
+	 * password, String subscribe) {
+	 * Assert.assertTrue(regPage.registerUser(firstName, lastName,
+	 * getRandomEmailId(), telephone, password, subscribe));
+	 * 
+	 * }
+	 */
 	
 	
-	@Test(dataProvider = "getUserRegSheetData")
-	public void userRegisterTest(String firstName, String lastName, String telephone, String password, String subscribe) {
-		Assert.assertTrue(regPage.registerUser(firstName, lastName, getRandomEmailId(), telephone,  password,  subscribe));
+	@Test
+	public void resetPage() {
+		String xyz="";
+		Object abc= ExcelUtil.getTestData("OpenCartTestData","register","Reset_001","UNIQUE");
+		System.out.println(xyz);
+		
 		
 	}
-	
 	
 	
 

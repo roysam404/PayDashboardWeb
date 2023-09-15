@@ -31,6 +31,9 @@ public class AppConstants {
 	
 	//********************Sheet Names *********************//
 	public static final String REGISTER_SHEET_NAME = "register";
+	
+	//********************Sheet Names *********************//
+	public static final String TEST_DATA_PATH = "/src/test/resources/testdata/";
  
 	
 	
